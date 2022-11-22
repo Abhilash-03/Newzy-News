@@ -1,0 +1,18 @@
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+    color: white;
+    font-family: cursive;
+    background-color: black;
+    border: none;
+    border-bottom: 4px solid red;
+    border-left: 4px solid red;
+    border-radius: 5px;
+}
+
+body{
+    background-color: rgba(214, 204, 244, 0.877);
+}
