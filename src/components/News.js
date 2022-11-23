@@ -38,7 +38,7 @@ export class News extends Component {
     // fetching the news api      
     async componentDidMount(){
        this.props.setProgress(10);
-        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a756d3bbb1de45318e5f2aab59b69480&page=1&pageSize=${this.props.pageSize}`;
+        let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=1&pageSize=${this.props.pageSize}`;
 
         let data = await fetch(url);
        this.props.setProgress(40);
@@ -56,7 +56,7 @@ export class News extends Component {
     // this function is used for scrolling data infinitly without using prev and next button.
     fetchMoreData = async() => {
       this.setState({page: this.state.page + 1});
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a756d3bbb1de45318e5f2aab59b69480&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
 
       let data = await fetch(url);
       let parsedData = await data.json();
