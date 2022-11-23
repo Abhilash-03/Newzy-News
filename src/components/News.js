@@ -37,14 +37,19 @@ export class News extends Component {
 
     // fetching the news api      
     async componentDidMount(){
+       this.props.setProgress(10);
         let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=a756d3bbb1de45318e5f2aab59b69480&page=1&pageSize=${this.props.pageSize}`;
 
-        // this.setState({loading: true});
         let data = await fetch(url);
+       this.props.setProgress(40);
+
         let parsedData = await data.json();
+       this.props.setProgress(70);
 
         this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false });
-
+       
+       this.props.setProgress(100);
+         
 
     }
 
@@ -59,6 +64,7 @@ export class News extends Component {
       this.setState({
          articles: this.state.articles.concat(parsedData.articles),
          totalResults: parsedData.totalResults, 
+         loading: false
         });
 
     };
@@ -79,12 +85,12 @@ export class News extends Component {
           loader={<Spinner/>}
         >
    
-      <div className="container">
+      <div className="container my-3">
         <div className="row" >
           {!this.state.loading && this.state.articles.map((element)=>{
 
            return  <div className="col-md-4 my-2" key={element.url}>
-                <NewsItems title={element.title?element.title.slice(0, 40):""} description={element.description?element.description.slice(0, 100):""} imageurl = {element.urlToImage?element.urlToImage:""} 
+                <NewsItems title={element.title?element.title:""} description={element.description?element.description.slice(0, 100):""} imageurl = {element.urlToImage?element.urlToImage:""} 
                 newsurl = {element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
             </div>
          
