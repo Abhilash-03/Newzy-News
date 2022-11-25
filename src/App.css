@@ -14,3 +14,16 @@
 body{
     background-color: black;
 }
+
+.h-threedots{
+    
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width:auto; /* some width */
+    
+}
+
+.box-shadow{
+    box-shadow: 5px 4px 5px 2px blueviolet;
+}
