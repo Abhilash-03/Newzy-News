@@ -4,11 +4,13 @@
     align-items: center;
     color: white;
     font-family: cursive;
-    background-color: rgb(86, 24, 137);
-    border: none;
+    background-color: transparent;
+    border-color: none;
     border-bottom: 4px solid red;
     border-left: 4px solid red;
     border-radius: 5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 body{
@@ -25,5 +27,5 @@ body{
 }
 
 .box-shadow{
-    box-shadow: 5px 4px 5px 2px blueviolet;
+    box-shadow: 3px 4px 6px 2px #cccfc3b5;;
 }
