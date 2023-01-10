@@ -26,6 +26,38 @@ body{
     
 }
 
+.cText{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+  font-weight: 600;
+}
+
+
 .box-shadow{
     box-shadow: 3px 4px 6px 2px #cccfc3b5;;
+}
+
+@media only screen and (max-width: 992px) {
+    [class*="col-"]{
+        width: 49.333333%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"]{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 290px) {
+    [class*="col-"]{
+        width: 100%;
+    }
+
+    .cText{
+        font-size: small;
+    }
+    .btn{
+        font-size: smaller;
+        padding: 1.2px;
+    }
 }
